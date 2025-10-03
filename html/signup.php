@@ -59,7 +59,7 @@
         <button class="btn btn-signup" onclick="validateSignup()">Sign Up</button>
 
         <p class="login-link mt-3">
-          Already have an account? <a href="Log_in.html">Log in</a>
+          Already have an account? <a href="login.php">Log in</a>
         </p>
       </div>
 

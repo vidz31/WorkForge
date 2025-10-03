@@ -48,7 +48,7 @@
         <button class="btn btn-login" onclick="validateLogin()">Log in</button>
 
         <p class="signup-link mt-3">
-          Don’t have an account? <a href="Sign_up.html">Sign up</a>
+          Don’t have an account? <a href="signup.php">Sign up</a>
         </p>
       </div>
 
