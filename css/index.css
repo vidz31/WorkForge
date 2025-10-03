@@ -1,0 +1,161 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #5a2cc8, #4cc3c8);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+/* navbar  */
+.navbar {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d1d1d1 !important;
+}
+
+.navbar-nav .nav-link.login {
+    border: 1px solid white;
+    color: white !important;
+    padding: 6px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link.login:hover {
+    background: white;
+    color: #5a2cc8 !important;
+}
+
+.navbar-nav .nav-link.signup {
+    background: white;
+    color: #5a2cc8 !important;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 6px;
+}
+
+.navbar-nav .nav-link.signup:hover {
+    background: #f0f0f0;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 80px 20px 40px;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Floating background icons */
+.floating-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    color: white;
+    opacity: 0.15;
+    animation: float 6s ease-in-out infinite;
+}
+
+.icon-gear {
+    top: 20%;
+    left: 15%;
+}
+
+.icon-pen {
+    top: 35%;
+    right: 18%;
+    animation-delay: 1s;
+}
+
+.icon-chat {
+    top: 55%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.icon-megaphone {
+    top: 70%;
+    right: 25%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Task cards */
+.task-cards {
+    margin-top: 40px;
+}
+
+.task-card {
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.task-card i {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.tech-task {
+    background: linear-gradient(135deg, #4a1fa8, #1e88b3);
+}
+
+.design-task {
+    background: linear-gradient(135deg, #3b1d70, #1a4d85);
+}
+
+.writing-task {
+    background: linear-gradient(135deg, #0d665c, #1f8f79);
+}
+
+.marketing-task {
+    background: linear-gradient(135deg, #96213a, #6d1d55);
+}

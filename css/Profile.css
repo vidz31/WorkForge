@@ -1,0 +1,43 @@
+.profile-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-btn {
+  border: 1px solid #4A90E2;
+  color: #4A90E2;
+  border-radius: 25px;
+  padding: 6px 20px;
+  font-weight: 500;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #4A90E2;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-stats {
+  margin-top: 20px;
+  font-weight: 500;
+  color: #555;
+}

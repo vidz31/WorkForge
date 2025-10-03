@@ -1,0 +1,102 @@
+h1 {
+  color: #fff;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Filter Section */
+.filter-container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filter-container .form-select,
+.filter-container .form-control {
+  min-width: 200px;
+}
+
+.filter-btn {
+  background: #3b4cca;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 8px 50px;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background: #141e72;
+  color: white;
+}
+
+/* Task Cards */
+.task-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+}
+
+.task-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.task-desc {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.task-meta {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-tag {
+  display: inline-block;
+  background: #f1f1f1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.task-date {
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btn {
+    padding: 8px 20px;
+  }
+}

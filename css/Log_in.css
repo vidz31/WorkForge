@@ -1,0 +1,141 @@
+body {
+  background: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-section {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 750px;
+  width: 100%;
+}
+
+.illustration {
+  flex: 1.1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration img {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.login-box {
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  padding: 28px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-control {
+  border-radius: 8px;
+}
+
+.btn-login {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #3b4cca;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: #141e72;
+  color: #fff;
+}
+
+.toggle-btns {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toggle-btns .btn {
+  flex: 1;
+  margin: 0;
+  border: 1px solid #3b4cca;
+  background: #fff;
+  color: #3b4cca;
+  font-weight: 500;
+  border-radius: 0;
+}
+
+.toggle-btns .btn+.btn {
+  border-left: 0;
+}
+
+.toggle-btns .btn:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.toggle-btns .btn:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.toggle-btns .btn.active {
+  background: #3b4cca;
+  color: #fff;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.field {
+  position: relative;
+}
+
+.field .icon-left {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.field .form-control.with-icon-left {
+  padding-left: 2.5rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #3b4cca;
+}
+
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+    max-width: 420px;
+  }
+
+  .illustration img {
+    height: 280px;
+  }
+}
