@@ -1,0 +1,116 @@
+1. Users Table
+users
+- user_id (Primary Key, Auto Increment)
+- full_name (VARCHAR)
+- email (VARCHAR, UNIQUE)
+- password (VARCHAR, Hashed)
+- role (ENUM: 'freelancer', 'business')
+- completed_tasks (INT, default 0)
+- date_created (TIMESTAMP)
+- last_login (TIMESTAMP)
+- is_active (BOOLEAN, default TRUE)
+
+
+2. Tasks Table
+tasks
+- task_id (Primary Key, Auto Increment)
+- client_id (Foreign Key to users.user_id)
+- title (VARCHAR)
+- description (TEXT)
+- category (ENUM: 'Tech', 'Design', 'Writing', 'Marketing')
+- budget (DECIMAL)
+- deadline (DATE)
+- status (ENUM: 'open', 'in_progress', 'completed', 'cancelled')
+- proposals_count (INT, default 0)
+- date_posted (TIMESTAMP)
+- date_updated (TIMESTAMP)
+
+3. Proposals Table
+proposals
+- proposal_id (Primary Key, Auto Increment)
+- task_id (Foreign Key to tasks.task_id)
+- freelancer_id (Foreign Key to users.user_id)
+- bid_amount (DECIMAL)
+- cover_message (TEXT)
+- status (ENUM: 'pending', 'accepted', 'rejected')
+- date_submitted (TIMESTAMP)
+
+4. Freelancer Profiles Table
+freelancer_profiles
+- profile_id (Primary Key, Auto Increment)
+- user_id (Foreign Key to users.user_id)
+- skills (TEXT, JSON or comma-separated)
+- description (TEXT)
+- hourly_rate (DECIMAL)
+- portfolio_links (TEXT)
+- availability (ENUM: 'available', 'busy', 'unavailable')
+
+5. Task Assignments Table
+task_assignments
+- assignment_id (Primary Key, Auto Increment)
+- task_id (Foreign Key to tasks.task_id)
+- freelancer_id (Foreign Key to users.user_id)
+- proposal_id (Foreign Key to proposals.proposal_id)
+- start_date (TIMESTAMP)
+- completion_date (TIMESTAMP)
+- status (ENUM: 'assigned', 'in_progress', 'submitted', 'approved', 'revision_requested')
+
+6. Messages Table
+messages
+- message_id (Primary Key, Auto Increment)
+- sender_id (Foreign Key to users.user_id)
+- receiver_id (Foreign Key to users.user_id)
+- task_id (Foreign Key to tasks.task_id, nullable)
+- message_content (TEXT)
+- is_read (BOOLEAN, default FALSE)
+- date_sent (TIMESTAMP)
+
+7. Reviews/Ratings Table
+reviews
+- review_id (Primary Key, Auto Increment)
+- task_id (Foreign Key to tasks.task_id)
+- reviewer_id (Foreign Key to users.user_id)
+- reviewee_id (Foreign Key to users.user_id)
+- rating (INT, 1-5)
+- review_text (TEXT)
+- date_created (TIMESTAMP)
+
+8. Categories Tables
+categories
+- category_id (Primary Key, Auto Increment)
+- category_name (VARCHAR)
+- description (TEXT)
+- icon_class (VARCHAR, for Font Awesome icons)
+
+9. Skills Table
+skills
+- skill_id (Primary Key, Auto Increment)
+- skill_name (VARCHAR, UNIQUE)
+- category_id (Foreign Key to categories.category_id)
+
+10. User Skills Table
+user_skills
+- user_skill_id (Primary Key, Auto Increment)
+- user_id (Foreign Key to users.user_id)
+- skill_id (Foreign Key to skills.skill_id)
+- proficiency_level (ENUM: 'beginner', 'intermediate', 'advanced', 'expert')
+
+11. Task History Table
+task_history
+- history_id (Primary Key, Auto Increment)
+- task_id (Foreign Key to tasks.task_id)
+- user_id (Foreign Key to users.user_id)
+- action (VARCHAR) -- 'created', 'proposal_submitted', 'assigned', 'completed', etc.
+- description (TEXT)
+- date_occurred (TIMESTAMP)
+
+12. Notifications Table
+notifications
+- notification_id (Primary Key, Auto Increment)
+- user_id (Foreign Key to users.user_id)
+- type (ENUM: 'new_task', 'proposal_received', 'task_assigned', 'message', 'payment')
+- title (VARCHAR)
+- content (TEXT)
+- is_read (BOOLEAN, default FALSE)
+- related_id (INT) -- ID of related task, proposal, etc.
+- date_created (TIMESTAMP)

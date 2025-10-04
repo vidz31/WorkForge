@@ -1,3 +1,14 @@
+<?php
+  require_once '../includes/helpers.php';
+  require_once '../classes/Task.php';
+  Auth::requireAuth();
+  $category = isset($_GET['category']) ? Utils::sanitize($_GET['category']) : null;
+  $budget_order = isset($_GET['budget_order']) ? Utils::sanitize($_GET['budget_order']) : null;
+  $deadline_filter = isset($_GET['deadline']) ? Utils::sanitize($_GET['deadline']) : null;
+  $task = new Task();
+  $tasks = $task->getAllTasks($category, $budget_order, $deadline_filter);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +19,6 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/Browse_task.css">
-</head>
 
 <body>
   <!-- Navbar -->
